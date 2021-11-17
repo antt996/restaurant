@@ -1,0 +1,11 @@
+<h1><%=@product.name %></h1>
+
+    <div> 
+        
+        <h2>Precio:</h2><%=@product.price %> 
+        <h2>Stock:</h2> <%=@product.stock %> 
+    </div>
+
+    <div>
+        <%=link_to "Eliminar Producto", @product, method: :delete %>
+    </div>
