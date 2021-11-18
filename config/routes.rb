@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'inicio#index'
   get 'products/new', to: 'products#new'
   get 'products/:id', to: 'products#show'
-  get 'products/:id/edit', to: 'products#edit'
+  get 'products/:id/edit', to: 'products#edit', as: :product_edit
   patch '/products/:id', to: 'products#update', as: :product
   post 'products', to: 'products#create'
   delete '/products/:id', to: 'products#destroy'
