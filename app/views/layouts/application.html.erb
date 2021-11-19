@@ -9,15 +9,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= stylesheet_link_tag "sb-admin-2.min" %>
     <style>
  
     </style>
   </head>
 
-  <body>
-   <%= render 'partials/sidebar' %>
-    <%= yield %>
-  <%= render 'partials/content' %>
+  <body id="page-top">
+    
+
+          <%= render 'partials/sidebar3' %>
+            <%= yield %>
+          <%= render 'partials/content' %>
+    
   </body>
 </html>

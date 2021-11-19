@@ -22,6 +22,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#gemas para plantilla de bootstrap
+
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'font_awesome5_rails'
+
 #gema devise para autenticacion de usuarios
 gem 'devise'
 # Use Active Storage variant
