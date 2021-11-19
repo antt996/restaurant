@@ -1,22 +1,12 @@
-<div class="card text-uppercase text-center" style="padding:15px;max-width:300px;margin:20px;">
-    <%
-=begin%>
- <%=product.id %> 
-<%
-=end%>
-    <%=product.name %>
-    <%=product.price %> $
-    <%
-=begin%>
- <%=product.stock %> 
-<%
-=end%>
-<div>
-<%= link_to "ver mas", product %>
-<%
-=begin%>
- <%= link_to "Editar", @product , product_edit_path %> 
-<%
-=end%>
-</div>
-</div>
+
+ <tr>
+      <td scope="row"> <%=product.id %></th>
+      <td> <%=product.name %></td>
+      <td> <%=product.price %> $</td>
+      <td> <%= link_to "ver mas", product %></td>
+</tr>
+
+
+   
+   
+ 
