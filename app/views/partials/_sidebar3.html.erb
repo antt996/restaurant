@@ -8,7 +8,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Restaurante</div>
+                <div class="sidebar-brand-text mx-3">Restaurante</sup></div>
             </a>
 
             <!-- Divider -->
@@ -16,9 +16,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link">
-                    <i class="fas fa-fw fa-tablet-alt"></i>
-                    <span>Navegacion</span></a>
+               <%= link_to "inicio", root_path, :class =>"fas fa-fw fa-tablet-alt" %>
             </li>
 
             <!-- Divider -->
@@ -95,17 +93,31 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                
+                <%= link_to  root_path, :class=>"nav-link" do %>
+                    <i class="fas fa-fw fa-tablet"></i>
+                    <span>Inicio</span>
+                <%end%>
+                
             </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+             <li class="nav-item">
+                
+                <%= link_to  products_index_path, :class=>"nav-link" do %>
+                    <i class="fas fa-fw fa-tablet"></i>
+                    <span>Productos</span>
+                <%end%>
+                
             </li>
+            <li class="nav-item">
+                
+                <%= link_to  products_new_path, :class=>"nav-link" do %>
+                    <i class="fas fa-fw fa-tablet"></i>
+                    <span>Nuevo</span>
+                <%end%>
+                
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

@@ -26,7 +26,8 @@ class ProductsController < ApplicationController
 
     def create
       @product =  Product.create(name: params[:product][:name], price: params[:product][:price], stock: params[:product][:stock])
-      render json: @product
+      
+      redirect_to products_index_path
     end
 
     def destroy
