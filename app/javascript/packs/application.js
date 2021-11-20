@@ -11,6 +11,7 @@ import "bootstrap"
 import "css/styles"
 import "jsbootstrap/sb-admin-2.min"
 import "jquery"
+import "jquery_ujs"
 
 
 Rails.start()

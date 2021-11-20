@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-    before_action :find_product, except: [:new,:create, :index]
+  before_action :find_product, except: [:new,:create, :index]
+  before_action :authenticate_user!
     def show
      
     end

@@ -16,11 +16,25 @@
   </head>
 
   <body id="page-top">
-    
+    <%if notice%>
+<p class="notice alert-primary"><%=notice%>Noticia</p>
+<%end%>
 
-          <%= render 'partials/sidebar3' %>
+<% if alert %>
+  
+<p class="alert alert-danger"><%=alert%>Alerta</p>
+<% end %>
+
+  
+  <% if user_signed_in? %>
+    <%= render 'partials/sidebar3' %>
             <%= yield %>
           <%= render 'partials/content' %>
+    <% else %>
+            <%= yield %>
+  <% end %>
+  
+       
     
   </body>
 </html>
