@@ -162,16 +162,16 @@
         </li>
         <div class="topbar-divider d-none d-sm-block"></div>
         <% if user_signed_in? %>
-          <li class="nav-item">
+          <li class="nav-item " >
             <%= link_to  destroy_user_session_path,method: :delete, :class=>"nav-link" do %>
-              <i class="fas fa-fw fa-user"></i>
+              <i class="fas fa-fw fa-user " style="color:red;"></i>
               <span>cerrar</span>
             <%end%>
           </li>
         <% else %>
-          <li class="nav-item">
+          <li class="nav-item" style="color:red">
             <%= link_to  new_user_session_path, :class=>"nav-link" do %>
-              <i class="fas fa-fw fa-user"></i>
+              <i class="fas fa-fw fa-user" style="color:green;"></i>
               <span>Iniciar</span>
             <%end%>
           </li>

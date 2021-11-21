@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     end
     def update
        
-        @id = Product.find(params[:id])
+      
         @product =  Product.update(name: params[:product][:name], price: params[:product][:price], stock: params[:product][:stock])
         
         redirect_to products_index_path
