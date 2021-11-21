@@ -1,29 +1,58 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="container">
   <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Registrate!</h1>
+                            </div>
+                            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                              
+                                 <div class="form-group">
+                                            <%= f.label :email, "Correo electronico" %><br />
+                                            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user", id: "exampleInputEmail" %>
+                                    
+                                   </div>
+                                                              
+                                <div class="form-group">
+                                    
+                                        <%= f.label :password, "Contraseña" %>
+                                            <% if @minimum_password_length %>
+                                            <em>(<%= @minimum_password_length %> caracteres minimos)</em>
+                                            <% end %><br />
+                                            <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-user" %>
+                                    
+                                    
+                                      <%= f.label :password_confirmation, "Repite la contraseña" %><br />
+                                      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control form-control-user" %>
+                                        
+                                    
+                                </div>
+                                   <%= f.submit "Registrame", class: "btn btn-primary btn-user btn-block" %>
+                                
+                                <a href="index.html" class="btn btn-google btn-user btn-block disabled">
+                                    <i class="fab fa-google fa-fw"></i>Registrate con google
+                                </a>
+                                <a href="index.html" class="btn btn-facebook btn-user btn-block disabled">
+                                    <i class="fab fa-facebook-f fa-fw"></i> Registrate con Facebook
+                                </a>
+                            
+                            <% end %>
+                            
+                            <hr>
+                            <div class="text-center">
+                                  <%= render "devise/shared/links" %>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    </div>
