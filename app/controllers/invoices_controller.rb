@@ -19,7 +19,9 @@ class InvoicesController < ApplicationController
 
   # GET /invoices/1/edit
   def edit
-    @Products = Product.all
+
+    # @Products = Product.all
+
     # @invoice.save_products
   end
 
