@@ -14,7 +14,7 @@ class InvoicesController < ApplicationController
   # GET /invoices/new
   def new
     @invoice = Invoice.new
-    @Products = Product.all
+    @products = Product.all
   end
 
   # GET /invoices/1/edit
@@ -27,7 +27,7 @@ class InvoicesController < ApplicationController
   def create
     @invoice = current_user.invoices.new(invoice_params)
    
-     @invoice.save_products
+    # @invoice.save_products
 
     respond_to do |format|
       if @invoice.save

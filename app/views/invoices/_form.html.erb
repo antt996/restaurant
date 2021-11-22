@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, {placeholder: current_user.email} %>
+    <%= form.label :user_id.name %>
+    <%= form.text_field :user_id.name, {placeholder: current_user.email} %>
   </div>
 
 <div class="field">
     <%= form.label :product_elements %>
     <div class=row>
       
-      <% @Products.each do |product| %>
+      <%# @products.each do |product| %>
        <label class="col-6col-sm-3">
-       <%= form.check_box :product_elements, {multiple: true}, product.id, nil%>
-       <%= product.name %>
+       <%#= form.check_box :product_elements, {multiple: true}, product.id, nil%>
+       <%#= product.name %>
        
        </label>
         
-      <% end %>
+      <%# end %>
       
     </div>
   </div>
