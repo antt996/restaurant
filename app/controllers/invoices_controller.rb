@@ -20,7 +20,7 @@ class InvoicesController < ApplicationController
   # GET /invoices/1/edit
   def edit
     @Products = Product.all
-    @invoice.save_products
+    # @invoice.save_products
   end
 
   # POST /invoices or /invoices.json

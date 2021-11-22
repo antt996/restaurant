@@ -5,11 +5,5 @@ class Invoice < ApplicationRecord
   attr_accessor :product_elements
 
 
-  # def save_products
-  #   products_array = product_elements.try(:split, ",")
   
-  #   products_array.each do |product|
-  #     Detailinvoice.create(invoice: self, product_id: product)
-  #   end
-  # end
 end
