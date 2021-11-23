@@ -1,15 +1,15 @@
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="https://grandhotelier.com/wp-content/uploads/2019/08/Meseros.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title"><%=@product.name %></h5>
-    <p class="card-text"><%=@product.id %> </p>
-    <p class="card-text"><%=@product.price %> </p>
-    <p class="card-text"><%=@product.stock %> </p>
+    <h5 class="card-title text-capitalize"><%=@product.name %></h5>
+   
+    <p class="card-text"><%=@product.price %>$</p>
+    
     
   <div>
-        <%=link_to "Eliminar Producto",  product_delete_path(@product.id) %>
-        <br>
-        <%=link_to "Editar",  product_edit_path(@product.id) %>
+        <%=link_to "Editar",  product_edit_path(@product.id),  {:class=> "btn btn-success "} %>
+        <br><br>
+        <%=link_to "Eliminar Producto" ,  product_delete_path(@product.id), {:class=> "btn btn-danger"} %>
     </div>
   </div>
 </div>

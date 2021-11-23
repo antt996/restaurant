@@ -11,26 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id.name %>
-    <%= form.text_field :user_id.name, {placeholder: current_user.email} %>
-  </div>
+  
 
-<div class="field">
-    <%= form.label :product_elements %>
-    <div class=row>
-      
-      <% @products.each do |product| %>
-       <label class="col-6col-sm-3">
-       <%= form.check_box :product_elements, {multiple: true}, product.id, nil%>
-       <%= product.name %>
-       
-       </label>
-        
-      <% end %>
-      
-    </div>
-  </div>
+
 
   <div class="field">
     <%= form.label :nombre_cliente %>
@@ -47,7 +30,25 @@
     <%= form.text_field :total_factura %>
   </div>
 
+
+  <div class="field">
+    <%= form.label :product_elements %>
+    <div class=row>
+      
+      <% @products.each do |product| %>
+       <label class="col-6col-sm-3">
+       <%= form.check_box :product_elements, {multiple: true}, product.id, nil%>
+       <%= product.name %> <%= product.price %>$
+       
+       </label>
+        
+      <% end %>
+      
+    </div>
+  </div>
+
+
   <div class="actions">
-    <%= form.submit %>
+      <%= form.submit class: "btn btn-primary btn-user" %>
   </div>
 <% end %>
