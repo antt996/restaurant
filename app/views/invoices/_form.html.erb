@@ -13,42 +13,57 @@
 
   
 
-
-
-  <div class="field">
-    <%= form.label :nombre_cliente %>
-    <%= form.text_field :nombre_cliente %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email_cliente %>
-    <%= form.text_field :email_cliente %>
-  </div>
-
-  <div class="field">
-    <%= form.label :total_factura %>
-    <%= form.text_field :total_factura %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :product_elements %>
-    <div class=row>
-      
-      <% @products.each do |product| %>
-       <label class="col-6col-sm-3">
-       <%= form.check_box :product_elements, {multiple: true}, product.id, nil%>
-       <%= product.name %> <%= product.price %>$
-       
-       </label>
+<div class="row-auto mr-2">
+        <div class="field p-2 ml-4">
+          <%= form.label :nombre_cliente, {:class =>"form-label"}%>
+          <%= form.text_field :nombre_cliente %>
         
-      <% end %>
       
-    </div>
+          <%= form.label :email_cliente %>
+          <%= form.text_field :email_cliente %>
+        
+
+       
+          <%= form.label :total_factura %>
+          <%= form.text_field :total_factura %>
+
+
+        <div class="actions mb-4 mt-4">
+              <%= form.submit "crear factura", class: "btn btn-primary btn-user" %>
+        </div>
+        </div>
+</div>
+
+  
+  <table class="table table-hover table-bordered ">
+  <thead>
+    <tr>
+      <th scope="col">Opcion</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col" colspan="3" >Cantidad</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+<% @products.each do |product| %>
+    <tr>
+      <td scope="row"><%= form.check_box :product_elements, {multiple: true}, product.id, nil%></th>
+      <td class="text-capitalize"> <%= product.name %></td>
+      <td> <%=product.price %> $</td>
+      <td>
+ 
+    <%= form.number_field :cantidad_producto %>
+ </td>
+    </tr>
+  <% end %>  
+  </tbody>
+</table>
+   
+      
+  
   </div>
 
-
-  <div class="actions">
-      <%= form.submit class: "btn btn-primary btn-user" %>
+  
   </div>
 <% end %>
