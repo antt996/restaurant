@@ -20,14 +20,14 @@
     <%= form.label :product_elements %>
     <div class=row>
       
-      <%# @products.each do |product| %>
+      <% @products.each do |product| %>
        <label class="col-6col-sm-3">
-       <%#= form.check_box :product_elements, {multiple: true}, product.id, nil%>
-       <%#= product.name %>
+       <%= form.check_box :product_elements, {multiple: true}, product.id, nil%>
+       <%= product.name %>
        
        </label>
         
-      <%# end %>
+      <% end %>
       
     </div>
   </div>

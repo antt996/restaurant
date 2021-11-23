@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :find_product, except: [:new,:create, :index]
+  before_action :find_product, except: [:new, :create, :index]
   before_action :authenticate_user!
     def show
      
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     def update
        
       
-        @product =  Product.update(name: params[:product][:name], price: params[:product][:price], stock: params[:product][:stock])
+        @product =  @product.update(name: params[:product][:name], price: params[:product][:price], stock: params[:product][:stock])
         
         redirect_to products_index_path
     end
