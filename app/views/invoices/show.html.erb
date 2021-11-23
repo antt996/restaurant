@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
 
+<p id="notice"><%= notice %></p>
+<div class="row justify-content-center">
+<div class="card" style="width: 18rem;">
+ <img src="https://grandhotelier.com/wp-content/uploads/2019/08/Meseros.jpg" class="card-img-top pt-2" alt="...">
+  <div class="card-body">
 <p>
   <strong>Empleado:</strong>
   <%= @invoice.user_id %>
@@ -14,11 +18,25 @@
   <strong>Email cliente:</strong>
   <%= @invoice.email_cliente %>
 </p>
+<p>
+  <strong>Productos:</strong>
+
+</p>
+<% @products.each do |product| %>
+  <p><%=product.name%> $ <%=product.price%>  x1    </p>
+
+<% end %>
 
 <p>
   <strong>Total factura:</strong>
   <%= @invoice.total_factura %>
 </p>
+<div class="row justify-content-center">
+<button type="button" class="btn btn-primary col-12">Imprimir</button> <br>
+</div>
 
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
+
+</div>
+</div>
+</div>
+</div>

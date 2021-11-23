@@ -9,6 +9,7 @@ class InvoicesController < ApplicationController
 
   # GET /invoices/1 or /invoices/1.json
   def show
+    @products = Product.all
   end
 
   # GET /invoices/new
@@ -20,7 +21,7 @@ class InvoicesController < ApplicationController
   # GET /invoices/1/edit
   def edit
 
-    # @Products = Product.all
+    @products = Product.all
 
     # @invoice.save_products
   end
