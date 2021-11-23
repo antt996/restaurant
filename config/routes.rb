@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   get 'products/:id/edit', to: 'products#edit', as: :product_edit
   patch '/products/:id', to: 'products#update', as: :product
   post 'products', to: 'products#create'
-  delete '/products/:id', to: 'products#destroy', as: :product_delete
+  get '/products/:id/destroy', to: 'products#destroy', as: :product_delete
 end

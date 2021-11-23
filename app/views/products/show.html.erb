@@ -7,7 +7,7 @@
     <p class="card-text"><%=@product.stock %> </p>
     
   <div>
-        <%=link_to "Eliminar Producto", product_delete_path(@product.id) %>
+        <%=link_to "Eliminar Producto",  product_delete_path(@product.id) %>
         <br>
         <%=link_to "Editar",  product_edit_path(@product.id) %>
     </div>
