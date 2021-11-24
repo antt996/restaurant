@@ -23,14 +23,15 @@ class InvoicesController < ApplicationController
 
     @products = Product.all
 
-    # @invoice.save_products
+     @invoice.save_products
   end
 
   # POST /invoices or /invoices.json
   def create
     @invoice = current_user.invoices.new(invoice_params)
+    
    
-    # @invoice.save_products
+    @invoice.save_products
 
     respond_to do |format|
       if @invoice.save
@@ -47,7 +48,7 @@ class InvoicesController < ApplicationController
   def update
     respond_to do |format|
       if @invoice.update(invoice_params)
-        format.html { redirect_to @invoice, notice: "Invoice was successfully updated." }
+        format.html { redirect_to @invoice, notice: "Invoice la factura ha sido actualizada." }
         format.json { render :show, status: :ok, location: @invoice }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -73,6 +74,6 @@ class InvoicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def invoice_params
-      params.require(:invoice).permit(:user_id, :nombre_cliente, :email_cliente, :total_factura, :product_elements)
+      params.require(:invoice).permit(:user_id, :nombre_cliente, :email_cliente, :total_factura, {product_elements: []})
     end
 end

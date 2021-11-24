@@ -16,20 +16,21 @@
 <div class="row-auto mr-2">
         <div class="field p-2 ml-4">
           <%= form.label :nombre_cliente, {:class =>"form-label"}%>
-          <%= form.text_field :nombre_cliente %>
+          <%= form.text_field :nombre_cliente, :required => true %>
         
       
           <%= form.label :email_cliente %>
-          <%= form.text_field :email_cliente %>
+          <%= form.text_field :email_cliente,:required => true %>
         
 
        
           <%= form.label :total_factura %>
-          <%= form.text_field :total_factura %>
+          <%= form.text_field :total_factura , :required => true%>
 
 
         <div class="actions mb-4 mt-4">
-              <%= form.submit "crear factura", class: "btn btn-primary btn-user" %>
+              
+               <%= form.submit :class=> "btn btn-success mt-3 btn-user"  %>
         </div>
         </div>
 </div>
@@ -40,8 +41,7 @@
     <tr>
       <th scope="col">Opcion</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Precio</th>
-      <th scope="col" colspan="3" >Cantidad</th>
+      <th scope="col">Precio</th>     
      
     </tr>
   </thead>
@@ -51,10 +51,7 @@
       <td scope="row"><%= form.check_box :product_elements, {multiple: true}, product.id, nil%></th>
       <td class="text-capitalize"> <%= product.name %></td>
       <td> <%=product.price %> $</td>
-      <td>
- 
-    <%= form.number_field :cantidad_producto %>
- </td>
+      
     </tr>
   <% end %>  
   </tbody>

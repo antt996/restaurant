@@ -22,7 +22,7 @@
   <strong>Productos:</strong>
 
 </p>
-<% @products.each do |product| %>
+<% @invoice.products.each do |product| %>
   <p><%=product.name%> $ <%=product.price%>  x1    </p>
 
 <% end %>

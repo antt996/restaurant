@@ -10,8 +10,15 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "sb-admin-2.min" %>
+    
     <style>
- 
+      input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
     </style>
   </head>
 
