@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2021_11_22_102109) do
 
   create_table "detail_invoices", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "invoice_id", null: false
+    t.integer "product_id", default: 1, null: false
+    t.integer "invoice_id", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["invoice_id"], name: "index_detail_invoices_on_invoice_id"
