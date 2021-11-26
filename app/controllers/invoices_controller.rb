@@ -23,7 +23,7 @@ class InvoicesController < ApplicationController
 
     @products = Product.all
 
-     @invoice.save_products
+    @invoice.save_products
   end
 
   # POST /invoices or /invoices.json
@@ -48,6 +48,7 @@ class InvoicesController < ApplicationController
   def update
     respond_to do |format|
       if @invoice.update(invoice_params)
+        @invoice.save_products
         format.html { redirect_to @invoice, notice: "Invoice la factura ha sido actualizada." }
         format.json { render :show, status: :ok, location: @invoice }
       else

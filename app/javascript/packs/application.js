@@ -17,3 +17,4 @@ import "jquery_ujs"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+global.$ = require ('jquery')
