@@ -17,6 +17,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@types/webpack": "^5.28.0",
     "webpack-dev-server": "3"
   }
 }
