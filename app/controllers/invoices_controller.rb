@@ -10,6 +10,7 @@ class InvoicesController < ApplicationController
   # GET /invoices/1 or /invoices/1.json
   def show
     @products = Product.all
+    @details = DetailInvoice.all
   end
 
   # GET /invoices/new
@@ -28,20 +29,25 @@ class InvoicesController < ApplicationController
 
   # POST /invoices or /invoices.json
   def create
+    # render json:invoice_params
+    # @quantity = params[:invoice][:product_quantity] - [""]
+    #  render json:@quantity 
+    
+    
     @invoice = current_user.invoices.new(invoice_params)
     
    
     @invoice.save_products
-
-    respond_to do |format|
-      if @invoice.save
-        format.html { redirect_to @invoice, notice: "Factura Creada" }
-        format.json { render :show, status: :created, location: @invoice }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @invoice.errors, status: :unprocessable_entity }
-      end
-    end
+    # @invoice.save_quantity
+     respond_to do |format|
+       if @invoice.save
+         format.html { redirect_to @invoice, notice: "Factura Creada" }
+         format.json { render :show, status: :created, location: @invoice }
+       else
+         format.html { render :new, status: :unprocessable_entity }
+         format.json { render json: @invoice.errors, status: :unprocessable_entity }
+       end
+     end
   end
 
   # PATCH/PUT /invoices/1 or /invoices/1.json
@@ -75,6 +81,6 @@ class InvoicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def invoice_params
-      params.require(:invoice).permit(:user_id, :nombre_cliente, :email_cliente, :total_factura, {product_elements: []})
+      params.require(:invoice).permit(:user_id, :nombre_cliente, :email_cliente, :total_factura, {product_quantity: []}, {product_elements: []})
     end
 end

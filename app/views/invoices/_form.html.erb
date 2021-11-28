@@ -42,16 +42,18 @@
       <th scope="col">Opcion</th>
       <th scope="col">Nombre</th>
       <th scope="col">Precio</th>     
+      <th scope="col">Cantidad</th>     
      
     </tr>
   </thead>
   <tbody>
 <% @products.each do |product| %>
     <tr>
-      <td scope="row"><%= form.check_box :product_elements, {multiple: true}, product.id, nil%></th>
+      <td scope="row"><%= form.check_box :product_elements, {multiple: true}, product.id, nil%></td>
       <td class="text-capitalize"> <%= product.name %></td>
       <td> <%=product.price %> $</td>
       
+      <td ><%= form.text_field :product_quantity, {multiple: true}%></td>
     </tr>
   <% end %>  
   </tbody>
