@@ -9,8 +9,12 @@ class InvoicesController < ApplicationController
 
   # GET /invoices/1 or /invoices/1.json
   def show
-    @products = Product.all
-    @details = DetailInvoice.all
+    @products = Invoice.find(params[:id]).detail_invoices
+    # @details = Invoice.find(params[:id]).detail_invoices.all
+
+    @products
+
+    # render json: @products
   end
 
   # GET /invoices/new
@@ -29,25 +33,27 @@ class InvoicesController < ApplicationController
 
   # POST /invoices or /invoices.json
   def create
-    # render json:invoice_params
-    # @quantity = params[:invoice][:product_quantity] - [""]
-    #  render json:@quantity 
+    #  @quantity = params[:invoice][:product_quantity] - [""]
+    #  @products = params[:invoice][:product_elements]
+    #  @union= @quantity << @products 
+    #  render json:@union
+    #  render json:invoice_params
     
     
     @invoice = current_user.invoices.new(invoice_params)
     
    
-    @invoice.save_products
-    # @invoice.save_quantity
-     respond_to do |format|
-       if @invoice.save
-         format.html { redirect_to @invoice, notice: "Factura Creada" }
-         format.json { render :show, status: :created, location: @invoice }
-       else
-         format.html { render :new, status: :unprocessable_entity }
-         format.json { render json: @invoice.errors, status: :unprocessable_entity }
-       end
-     end
+     @invoice.save_products
+    
+      respond_to do |format|
+        if @invoice.save
+          format.html { redirect_to @invoice, notice: "Factura Creada" }
+          format.json { render :show, status: :created, location: @invoice }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @invoice.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   # PATCH/PUT /invoices/1 or /invoices/1.json

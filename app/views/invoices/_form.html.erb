@@ -25,7 +25,7 @@
 
        
           <%= form.label :total_factura %>
-          <%= form.text_field :total_factura , :required => true%>
+          <%= form.text_field :total_factura , disabled: true%>
 
 
         <div class="actions mb-4 mt-4">
@@ -51,8 +51,7 @@
     <tr>
       <td scope="row"><%= form.check_box :product_elements, {multiple: true}, product.id, nil%></td>
       <td class="text-capitalize"> <%= product.name %></td>
-      <td> <%=product.price %> $</td>
-      
+      <td> <%=product.price %> $</td>        
       <td ><%= form.text_field :product_quantity, {multiple: true}%></td>
     </tr>
   <% end %>  

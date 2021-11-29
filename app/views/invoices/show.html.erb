@@ -23,18 +23,21 @@
   <strong>Productos:</strong>
 
 </p>
-<% @invoice.products.each do |product| %>
-  <p><%=product.name%> $ <%=product.price%></p>
-
-<% end %>
+<%@total_factura= 0%>
+<% @invoice.products.zip(@invoice.detail_invoices).each do |(product, detail)| %>
+  
+  <p><%=product.name%> $ <%=product.price%> x<%=detail.product_quantity%></p>........... <%=product.price * detail.product_quantity%>
+    <%@total_factura = @total_factura + ( product.price * detail.product_quantity )%>
+    <% end %>
+  
 
 
 <p>
   <strong>Total factura:</strong>
-  <%= @invoice.total_factura %>
+  <%= @total_factura %>
 </p>
 <div class="row justify-content-center">
-<button type="button" class="btn btn-primary col-12">Imprimir</button> <br>
+<button type="button" class="btn btn-primary col-12">Imprimir</button> <br> 
 
 </div>
 </div>

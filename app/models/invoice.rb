@@ -18,12 +18,14 @@ class Invoice < ApplicationRecord
             #Recibe y limpia el ARRAY de espacios en blancos
             @quantity = product_quantity - [""]
             #Itera el array 
-     
-      product_elements.each do |product_id|
-        @quantity.each do |product_quantity|
+
+      # list = [product_elements.product_id, product_quantity.product_quantity]
+      product_elements.zip(@quantity).each do |(product_id, product_quantity)|
+        
+         
           DetailInvoice.find_or_create_by(invoice: self, product_id: product_id, product_quantity: product_quantity)
 
-        end 
+        
       end 
       
      
