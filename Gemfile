@@ -30,6 +30,10 @@ gem 'font_awesome5_rails'
 
 #gema devise para autenticacion de usuarios
 gem 'devise'
+#gema para crear PDF
+gem 'wicked_pdf'
+#gema complementaria para el pdf
+gem 'wkhtmltopdf-binary'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

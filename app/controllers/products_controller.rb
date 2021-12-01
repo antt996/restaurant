@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :find_product, except: [:new, :create, :index]
+  before_action :find_product, except: [:new, :create, :index, :invoice]
   before_action :authenticate_user!
     def show
      
@@ -37,6 +37,7 @@ class ProductsController < ApplicationController
        redirect_to products_index_path
         
     end
+   
     def find_product
         @product = Product.find(params[:id])
     end

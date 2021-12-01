@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :invoices
+    scope :invoices do
+      get '/:id/pdf', to: 'invoices#pdf'
+    end
   devise_for :users
     devise_scope :user do
       get '/users/sign_out' => 'devise/sessions#destroy'
@@ -9,7 +12,7 @@ Rails.application.routes.draw do
   root :to => 'inicio#index'
 # Rutas CRUD productos
   get 'products/index', to:'products#index'
-  
+  get 'products/invoice', to: 'products#invoice'
   get 'products/new', to: 'products#new'
   get 'products/:id', to: 'products#show'
   get 'products/:id/edit', to: 'products#edit', as: :product_edit

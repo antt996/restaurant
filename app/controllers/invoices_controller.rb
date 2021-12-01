@@ -1,5 +1,5 @@
 class InvoicesController < ApplicationController
-  before_action :set_invoice, only: %i[ show edit update destroy ]
+  before_action :set_invoice, only: %i[ show edit update destroy pdf]
   before_action :authenticate_user!
 
   # GET /invoices or /invoices.json
@@ -9,12 +9,11 @@ class InvoicesController < ApplicationController
 
   # GET /invoices/1 or /invoices/1.json
   def show
-    @products = Invoice.find(params[:id]).detail_invoices
+    # @products = Invoice.find(params[:id]).detail_invoices
     # @details = Invoice.find(params[:id]).detail_invoices.all
-
-    @products
-
+     
     # render json: @products
+    
   end
 
   # GET /invoices/new
@@ -78,7 +77,15 @@ class InvoicesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def pdf
+   
+    respond_to do |format|
+        format.html
+        format.json
+        format.pdf {render template: 'invoices/pdf.pdf', pdf: 'Invoice'}
+      end   
 
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_invoice
