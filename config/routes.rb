@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :invoices
     scope :invoices do
-      get '/:id/pdf', to: 'invoices#pdf'
+      get '/:id/pdf.pdf', to: 'invoices#pdf', as: :invoice_pdf
     end
   devise_for :users
     devise_scope :user do
