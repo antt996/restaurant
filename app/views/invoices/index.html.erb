@@ -3,14 +3,14 @@
 <table class="responsive nowrap table table-hover" id="dttb-invoices" data-sort="true" data-source="<%= url_for(format: :json)%>">
   <thead>
     <tr>
-      <th data-data="user">User</th>
       <th data-data="nombre_cliente">Nombre cliente</th>
       <th data-data="email_cliente">Email cliente</th>
-      <th data-data="total_factura">Total factura</th>
+      <th data-data="total_factura">Opcion</th>
       <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
     </tr>
   </thead>
 
+<%= render @invoices %>
 </table>
 
 <br>
